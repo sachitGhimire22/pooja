@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Festive-All</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="shortcut icon" href="/bonfire.png" type="image/x-icon" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Toastr -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"
+    ></script>
+    <script>
+      // Configure Toastr options
+
+      toastr.options = {
+        closeButton: true,
+        timeOut: 3000,
+        positionClass = "toast-top-right"
+      };
+    </script>
+
+    <script
+      src="https://kit.fontawesome.com/32af3d915c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+      <div id="toast-container" class="toast-container"></div>
+    </div>
+    <p>{{details}}</p>
+    <section id="header">
+      <a href="#"
+        ><img src="/bonfire.png" class="logo" style="height: 50px" alt=""
+      /></a>
+
+      <div>
+        <ul id="navbar">
+          <li><a href="/" >Home</a></li>
+          <li><a href="shop" class="active">Shop</a></li>
+          <li><a href="blog">Blog</a></li>
+          <li><a href="about">About</a></li>
+          <li><a href="contact">Contact</a></li>
+          <li id="lg-bag">
+            <a href="cart"><i class="fa-solid fa-cart-shopping"></i></a>
+          </li>
+          <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+        </ul>
+      </div>
+      <div id="mobile">
+        <a href="cart"><i class="fa-solid fa-cart-shopping"></i></a>
+        <i id="bar" class="fas fa-outdent"></i>
+      </div>
+    </section>
+
+    
+      <div id="page-header">
+        <h2 class="ab">All Festival related products here</h2>
+        <p class="ab">"Embrace Festive Cheer With Us."</p>
+      </div>
+    </div>
+
+    
+
+    <section id="product1" class="section-p1">
+    
+      <div class="pro-container">
+        <div class="pro" onclick="window.location.href='sproduct.html';">
+          <img src="/static/img/dashain-used.jpg" alt="" />
+          <div class="des">
+            <span>Festive-All</span>
+            <h5>Dashain Collections</h5>
+            <h4>Rs.5000</h4>
+          </div>
+          <a href="sproduct.html"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+        <div class="pro">
+          <img src="/static/img/tihar-used.jpg" alt="" />
+          <div class="des">
+            <span>Festive-All</span>
+            <h5>Tihar Collections</h5>
+            <h4>Rs.5000</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+        <div class="pro">
+          <img src="/static/img/holi-used.jpg" alt="" />
+          <div class="des">
+            <span>Festive-All</span>
+            <h5>Holi Collection</h5>
+            <h4>Rs.1000</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+        <div class="pro">
+          <img src="/static/img/wedding-used.webp" alt="" />
+          <div class="des">
+            <span>Festive-All</span>
+            <h5>Wedding Collections</h5>
+            <h4>Rs.5000</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+        <div class="pro">
+          <img src="static/img/rakxya-bandan-used.jpg" alt="" />
+          <div class="des">
+            <span>Festive-All</span>
+            <h5>Janai Purnima/Rakxya Bandan</h5>
+            <h4>Rs.5000</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+        <div class="pro">
+          <img src="/static/img/name-giving-used.webp" alt="" />
+          <div class="des">
+            <span>Festive-All</span>
+            <h5>Naming Ceremony</h5>
+            <h4>Rs.5000</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+        <div class="pro">
+          <img src="/static/img/teej-used.jpg" alt="" />
+          <div class="des">
+            <span>Festive-All</span>
+            <h5>Hari-Talika Teej</h5>
+            <h4>Rs.5000</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+        <div class="pro">
+          <img src="/static/img/hom-puja-used.jpg" alt="" />
+          <div class="des">
+            <span>Festive-All</span>
+            <h5>Hom Puja</h5>
+            <h4>Rs.5000</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+        <div class="pro">
+          <img src="/static/img/rice-feeding-used.png" alt="" />
+          <div class="des">
+            <span>Festive-All</span>
+            <h5>Rice Feeding Ceremony</h5>
+            <h4>Rs.5000</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+
+        <div class="pro">
+          <img src="/static/img/bratabandha.jpg" alt="" />
+          <div class="des">
+            <span>Festive-All</span>
+            <h5>Bratabandha Collections</h5>
+            <h4>Rs.5000</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+
+        <div class="pro">
+          <img src="/static/img/shradhha-used.jpg" alt="" />
+          <div class="des">
+            <span>Festive-All</span>
+            <h5>Shradhha Collections</h5>
+            <h4>Rs.5000</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+        <div class="pro">
+          <img src="/static/img/krishnajanmasthami-used.webp" alt="" />
+          <div class="des">
+            <span>Festive-All</span>
+            <h5>Krishna Janma Asthami</h5>
+            <h4>Rs.5000</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+        <div class="pro">
+          <img src="/static/img/images (2).jpg" alt="" />
+          <div class="des">
+            <span>Festive-All</span>
+            <h5>Chhath puja</h5>
+            <h4>Rs.5000</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+        <div class="pro">
+          <img src="/static/img/laxmi-puja-used.webp" alt="" />
+          <div class="des">
+            <span>Festive-All</span>
+            <h5>Laxmi Puja Collections</h5>
+            <h4>Rs.5000</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+   
+        <div class="pro">
+          <img src="/static/img/dashain-used.jpg" alt="" />
+          <div class="des">
+            <span>Festive-All</span>
+            <h5>Dashain Collections</h5>
+            <h4>Rs.5000</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+        <div class="pro">
+          <img src="/static/img/tihar-used.jpg" alt="" />
+          <div class="des">
+            <span>Festive-All</span>
+            <h5>Tihar Collections</h5>
+            <h4>Rs.5000</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+        <div class="pro">
+          <img src="static/img/holi-used.jpg" alt="" />
+          <div class="des">
+            <span>Festive-All</span>
+            <h5>Holi Collection</h5>
+            <h4>Rs.1000</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+        <div class="pro">
+          <img src="static/img/wedding-used.webp" alt="" />
+          <div class="des">
+            <span>Festive-All</span>
+            <h5>Wedding Collections</h5>
+            <h4>Rs.5000</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+        <div class="pro">
+          <img src="/static/img/rakxya-bandan-used.jpg" alt="" />
+          <div class="des">
+            <span>Festive-All</span>
+            <h5>Janai Purnima/Rakxya Bandan</h5>
+            <h4>Rs.5000</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+        <div class="pro">
+          <img src="static/img/name-giving-used.webp" alt="" />
+          <div class="des">
+            <span>Festive-All</span>
+            <h5>Naming Ceremony</h5>
+            <h4>Rs.5000</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+        <div class="pro">
+          <img src="/static/img/teej-used.jpg" alt="" />
+          <div class="des">
+            <span>Festive-All</span>
+            <h5>Hari-Talika Teej</h5>
+            <h4>Rs.5000</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+        <div class="pro">
+          <img src="/staic/img/hom-puja-used.jpg" alt="" />
+          <div class="des">
+            <span>Festive-All</span>
+            <h5>Hom Puja</h5>
+            <h4>Rs.5000</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+        <div class="pro">
+          <img src="/static/img/rice-feeding-used.png" alt="" />
+          <div class="des">
+            <span>Festive-All</span>
+            <h5>Rice Feeding Ceremony</h5>
+            <h4>Rs.5000</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+
+        <div class="pro">
+          <img src="/static/img/bratabandha.jpg" alt="" />
+          <div class="des">
+            <span>Festive-All</span>
+            <h5>Bratabandha Collections</h5>
+            <h4>Rs.5000</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+
+        <div class="pro">
+          <img src="/static/img/shradhha-used.jpg" alt="" />
+          <div class="des">
+            <span>Festive-All</span>
+            <h5>Shradhha Collections</h5>
+            <h4>Rs.5000</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+        <div class="pro">
+          <img src="static/img/krishnajanmasthami-used.webp" alt="" />
+          <div class="des">
+            <span>Festive-All</span>
+            <h5>Krishna Janma Asthami</h5>
+            <h4>Rs.5000</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+        <div class="pro">
+          <img src="static/img/images (2).jpg" alt="" />
+          <div class="des">
+            <span>Festive-All</span>
+            <h5>Chhath puja</h5>
+            <h4>Rs.5000</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+        <div class="pro">
+          <img src="/static/img/laxmi-puja-used.webp" alt="" />
+          <div class="des">
+            <span>Festive-All</span>
+            <h5>Laxmi Puja Collections</h5>
+            <h4>Rs.5000</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+      </div>
+    </section>
+   
+    <!-- <section id="pagination" class="section-p1">
+        <a href="">1</a>
+        <a href="">1</a>
+        <a href="">1</a>
+    </section> -->
+    
+    {% comment %} <section id="newsletter" class="section-p1">
+      <div class="newstext">
+        <h4>Get Notified</h4>
+        <p>
+          Get E-mail updates about our latest and <span>Special offers</span>
+        </p>
+      </div>
+      <div class="form">
+        <input type="text" placeholder="Your Email Address" name="" id="" />
+        <button class="normal">Sign UP</button>
+      </div>
+    </section> {% endcomment %}
+    <footer class="section-p1">
+      <div class="col">
+        <img src="/bonfire.png" height="60px" alt="" />
+        <h4>Contact</h4>
+        <p><strong>Address: </strong>Shiphal,Kathmandu,Nepal</p>
+        <p><strong>Phone: </strong>+977 9803058344</p>
+        <p><strong>Hours: </strong>9:00 19:00 Sun - Sat</p>
+        <div class="follow">
+          <h4>Follow Us</h4>
+          <div class="icon">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-whatsapp"></i>
+            <i class="fab fa-viber"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <h4>About</h4>
+        <a href="#">About Us</a>
+        <a href="#">Delivery Information</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <div class="col">
+        <h4>My Account</h4>
+        <a href="#">Sign In</a>
+        <a href="#">View Cart</a>
+        <a href="#">My Wishlist</a>
+        <a href="#">Track My Order</a>
+        <a href="#">Help</a>
+      </div>
+      <div class="col install">
+        <h4>Payment Gateways</h4>
+        <p>secured Payment option</p>
+        <img src="/esewa_logo.png" height="20px" width="60px" alt="" />
+        <img src="/khalti-logo.svg" height="20px" width="60px" alt="" />
+      </div>
+      <div class="copyright">
+        <p>&copy;2023 , Sachit Ghimire - Festive-All</p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+      {% if messages%}
+      {%for message in messages%}
+      toastr.{{message.tags}}("{{message}}")
+      {%endfor%}
+      {%endif%}
+    </script>  
+  </body>
+</html>

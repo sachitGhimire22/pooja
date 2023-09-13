@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/logus.css" />
+    <script
+      src="https://kit.fontawesome.com/32af3d915c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Toastr -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"
+    ></script>
+    <script>
+      // Configure Toastr options
+
+      toastr.options = {
+        closeButton: true,
+        timeOut: 3000,
+        positionClass = "toast-top-right"
+      };
+    </script>
+  </head>
+
+  <body>
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+      <div id="toast-container" class="toast-container"></div>
+    </div>
+
+    <section class="log">
+      <div class="form_container">
+        <i class="fa-solid fa-xmark form_close"></i>
+
+        <!-- signup -->
+        <div class="form signup_form">
+          <form action="signup" method="POST">
+            {%csrf_token%}
+            <h2>signup</h2>
+            <div class="input_box">
+              <input
+                type="text"
+                name="first_name"
+                placeholder="Firstname"
+                required
+                value="{{first_name}}"
+              />
+            </div>
+            <div class="input_box">
+              <input
+                type="text"
+                name="lastName"
+                placeholder="Lastname"
+                required
+                value="{{lastName}}"
+              />
+            </div>
+            <div class="input_box">
+              <input
+                type="text"
+                name="username"
+                placeholder="username"
+                required
+                value="{{username}}"
+              />
+            </div>
+
+            <div class="input_box">
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                required
+                value="{{email}}"
+              />
+              <i class="fa-regular fa-envelope email"></i>
+            </div>
+            <div class="input_box" required>
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                required
+                value="{{password}}"
+              />
+              <i class="fa-solid fa-lock password"></i>
+              <i class="fa-solid fa-eye-slash pw_hide"></i>
+            </div>
+            {% comment %}
+            <div class="input_box" required>
+              <input type="password" placeholder="Confirm Password" />
+              <i class="fa-solid fa-lock password"></i>
+              <i class="fa-solid fa-eye-slash pw_hide"></i>
+            </div>
+            {% endcomment %}
+
+            <button class="button" type="submit">Sign Up</button>
+            <div class="login_signup">
+              Already have an account? <a href="login" id="signup">Login</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <script>
+      {% if messages%}
+      {%for message in messages%}
+      toastr.{{message.tags}}("{{message}}")
+      {%endfor%}
+      {%endif%}
+    </script>
+  </body>
+</html>
