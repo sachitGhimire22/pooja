@@ -40,7 +40,7 @@
     <p>{{details}}</p>
     <section id="header">
       <a href="#"
-        ><img src="/bonfire.png" class="logo" style="height: 50px" alt=""
+        ><img src="/{{bonfire.png}}"} class="logo" style="height: 50px" alt=""
       /></a>
 
       <div>
@@ -60,9 +60,7 @@
         <a href="cart"><i class="fa-solid fa-cart-shopping"></i></a>
         <i id="bar" class="fas fa-outdent"></i>
       </div>
-    </section>
-
-    
+    </section> 
       <div id="page-header">
         <h2 class="ab">All Festival related products here</h2>
         <p class="ab">"Embrace Festive Cheer With Us."</p>
@@ -74,263 +72,19 @@
     <section id="product1" class="section-p1">
     
       <div class="pro-container">
-        <div class="pro" onclick="window.location.href='sproduct.html';">
-          <img src="/static/img/dashain-used.jpg" alt="" />
-          <div class="des">
-            <span>Festive-All</span>
-            <h5>Dashain Collections</h5>
-            <h4>Rs.5000</h4>
-          </div>
-          <a href="sproduct.html"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
+        
+        {% for Collection in collections %}
         <div class="pro">
-          <img src="/static/img/tihar-used.jpg" alt="" />
+          <img src=http://localhost:8000/media/{{Collection.collection_image}} />
           <div class="des">
             <span>Festive-All</span>
-            <h5>Tihar Collections</h5>
-            <h4>Rs.5000</h4>
+            <h5>{{Collection.collection_name}}</h5>
+            <h4>{{Collection.collection_price}}</h4>
           </div>
           <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
-        <div class="pro">
-          <img src="/static/img/holi-used.jpg" alt="" />
-          <div class="des">
-            <span>Festive-All</span>
-            <h5>Holi Collection</h5>
-            <h4>Rs.1000</h4>
-          </div>
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-        <div class="pro">
-          <img src="/static/img/wedding-used.webp" alt="" />
-          <div class="des">
-            <span>Festive-All</span>
-            <h5>Wedding Collections</h5>
-            <h4>Rs.5000</h4>
-          </div>
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-        <div class="pro">
-          <img src="static/img/rakxya-bandan-used.jpg" alt="" />
-          <div class="des">
-            <span>Festive-All</span>
-            <h5>Janai Purnima/Rakxya Bandan</h5>
-            <h4>Rs.5000</h4>
-          </div>
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-        <div class="pro">
-          <img src="/static/img/name-giving-used.webp" alt="" />
-          <div class="des">
-            <span>Festive-All</span>
-            <h5>Naming Ceremony</h5>
-            <h4>Rs.5000</h4>
-          </div>
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-        <div class="pro">
-          <img src="/static/img/teej-used.jpg" alt="" />
-          <div class="des">
-            <span>Festive-All</span>
-            <h5>Hari-Talika Teej</h5>
-            <h4>Rs.5000</h4>
-          </div>
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-        <div class="pro">
-          <img src="/static/img/hom-puja-used.jpg" alt="" />
-          <div class="des">
-            <span>Festive-All</span>
-            <h5>Hom Puja</h5>
-            <h4>Rs.5000</h4>
-          </div>
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-        <div class="pro">
-          <img src="/static/img/rice-feeding-used.png" alt="" />
-          <div class="des">
-            <span>Festive-All</span>
-            <h5>Rice Feeding Ceremony</h5>
-            <h4>Rs.5000</h4>
-          </div>
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-
-        <div class="pro">
-          <img src="/static/img/bratabandha.jpg" alt="" />
-          <div class="des">
-            <span>Festive-All</span>
-            <h5>Bratabandha Collections</h5>
-            <h4>Rs.5000</h4>
-          </div>
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-
-        <div class="pro">
-          <img src="/static/img/shradhha-used.jpg" alt="" />
-          <div class="des">
-            <span>Festive-All</span>
-            <h5>Shradhha Collections</h5>
-            <h4>Rs.5000</h4>
-          </div>
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-        <div class="pro">
-          <img src="/static/img/krishnajanmasthami-used.webp" alt="" />
-          <div class="des">
-            <span>Festive-All</span>
-            <h5>Krishna Janma Asthami</h5>
-            <h4>Rs.5000</h4>
-          </div>
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-        <div class="pro">
-          <img src="/static/img/images (2).jpg" alt="" />
-          <div class="des">
-            <span>Festive-All</span>
-            <h5>Chhath puja</h5>
-            <h4>Rs.5000</h4>
-          </div>
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-        <div class="pro">
-          <img src="/static/img/laxmi-puja-used.webp" alt="" />
-          <div class="des">
-            <span>Festive-All</span>
-            <h5>Laxmi Puja Collections</h5>
-            <h4>Rs.5000</h4>
-          </div>
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-   
-        <div class="pro">
-          <img src="/static/img/dashain-used.jpg" alt="" />
-          <div class="des">
-            <span>Festive-All</span>
-            <h5>Dashain Collections</h5>
-            <h4>Rs.5000</h4>
-          </div>
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-        <div class="pro">
-          <img src="/static/img/tihar-used.jpg" alt="" />
-          <div class="des">
-            <span>Festive-All</span>
-            <h5>Tihar Collections</h5>
-            <h4>Rs.5000</h4>
-          </div>
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-        <div class="pro">
-          <img src="static/img/holi-used.jpg" alt="" />
-          <div class="des">
-            <span>Festive-All</span>
-            <h5>Holi Collection</h5>
-            <h4>Rs.1000</h4>
-          </div>
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-        <div class="pro">
-          <img src="static/img/wedding-used.webp" alt="" />
-          <div class="des">
-            <span>Festive-All</span>
-            <h5>Wedding Collections</h5>
-            <h4>Rs.5000</h4>
-          </div>
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-        <div class="pro">
-          <img src="/static/img/rakxya-bandan-used.jpg" alt="" />
-          <div class="des">
-            <span>Festive-All</span>
-            <h5>Janai Purnima/Rakxya Bandan</h5>
-            <h4>Rs.5000</h4>
-          </div>
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-        <div class="pro">
-          <img src="static/img/name-giving-used.webp" alt="" />
-          <div class="des">
-            <span>Festive-All</span>
-            <h5>Naming Ceremony</h5>
-            <h4>Rs.5000</h4>
-          </div>
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-        <div class="pro">
-          <img src="/static/img/teej-used.jpg" alt="" />
-          <div class="des">
-            <span>Festive-All</span>
-            <h5>Hari-Talika Teej</h5>
-            <h4>Rs.5000</h4>
-          </div>
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-        <div class="pro">
-          <img src="/staic/img/hom-puja-used.jpg" alt="" />
-          <div class="des">
-            <span>Festive-All</span>
-            <h5>Hom Puja</h5>
-            <h4>Rs.5000</h4>
-          </div>
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-        <div class="pro">
-          <img src="/static/img/rice-feeding-used.png" alt="" />
-          <div class="des">
-            <span>Festive-All</span>
-            <h5>Rice Feeding Ceremony</h5>
-            <h4>Rs.5000</h4>
-          </div>
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-
-        <div class="pro">
-          <img src="/static/img/bratabandha.jpg" alt="" />
-          <div class="des">
-            <span>Festive-All</span>
-            <h5>Bratabandha Collections</h5>
-            <h4>Rs.5000</h4>
-          </div>
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-
-        <div class="pro">
-          <img src="/static/img/shradhha-used.jpg" alt="" />
-          <div class="des">
-            <span>Festive-All</span>
-            <h5>Shradhha Collections</h5>
-            <h4>Rs.5000</h4>
-          </div>
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-        <div class="pro">
-          <img src="static/img/krishnajanmasthami-used.webp" alt="" />
-          <div class="des">
-            <span>Festive-All</span>
-            <h5>Krishna Janma Asthami</h5>
-            <h4>Rs.5000</h4>
-          </div>
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-        <div class="pro">
-          <img src="static/img/images (2).jpg" alt="" />
-          <div class="des">
-            <span>Festive-All</span>
-            <h5>Chhath puja</h5>
-            <h4>Rs.5000</h4>
-          </div>
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-        <div class="pro">
-          <img src="/static/img/laxmi-puja-used.webp" alt="" />
-          <div class="des">
-            <span>Festive-All</span>
-            <h5>Laxmi Puja Collections</h5>
-            <h4>Rs.5000</h4>
-          </div>
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
+        {% endfor %}
+  
       </div>
     </section>
    

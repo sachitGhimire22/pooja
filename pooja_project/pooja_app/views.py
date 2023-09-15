@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib import messages
+
 # Create your views here.
 from django.shortcuts import render
 
-from .models import Person
+from .models import Person,Collection
 # Create your views here.
 
 
@@ -20,8 +21,10 @@ def contact(request):
 
 
 def shop(request):
+    collections = Collection.objects.all()
     context = {
-        "details": request.session.get('person')
+        "details": request.session.get('person'),
+        "collections":collections
     }
     print(context)
     return render(request, "shop.html", context)
