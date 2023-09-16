@@ -9,7 +9,7 @@
       src="https://kit.fontawesome.com/32af3d915c.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/style.css" />
   </head>
 
   <body>
@@ -20,7 +20,7 @@
 
       <div>
         <ul id="navbar">
-          <li><a href="index">Home</a></li>
+          <li><a href="/">Home</a></li>
           <li><a href="shop" class="active">Shop</a></li>
           <li><a href="about">About</a></li>
           <li><a href="contact">Contact</a></li>
@@ -35,11 +35,14 @@
         <i id="bar" class="fas fa-outdent"></i>
       </div>
     </section>
-
     <section id="prodetails" class="section-p1">
       <div class="single-pro-image">
-        <img src="/static/img/bratabandha.jpg" width="100%" id="MainImg" alt="" />
-
+        <img
+          src="/static/img/bratabandha.jpg"
+          width="100%"
+          id="MainImg"
+          alt=""
+        />
         <div class="small-img-group">
           <div class="small-img-col">
             <img
@@ -78,7 +81,7 @@
 
       <div class="single-pro-details">
         <h6>Product related to:</h6>
-        <h4>Dashain Festival</h4>
+        <h4>{{collection_detail.collection_name}}</h4>
         <h2>Rs.5000</h2>
         <select>
           <option>Select Size</option>
@@ -92,6 +95,10 @@
           >The mentioned products are all from the local vendors promoting local
           level business.</span
         >
+        <br />
+        {%for item in items%}
+        <p>{{item.item_name}}</p>
+        {% endfor%}
       </div>
     </section>
 

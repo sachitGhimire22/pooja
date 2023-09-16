@@ -75,13 +75,13 @@
         
         {% for Collection in collections %}
         <div class="pro">
-          <img src=http://localhost:8000/media/{{Collection.collection_image}} />
+          <img src=http://localhost:8000/media/{{Collection.collection_image}} >
           <div class="des">
             <span>Festive-All</span>
             <h5>{{Collection.collection_name}}</h5>
             <h4>{{Collection.collection_price}}</h4>
           </div>
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+          <a href="product_details/{{Collection.id}}"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
         {% endfor %}
   

@@ -1,0 +1,26 @@
+.products_pooja{
+    display: flex;
+    gap: 2rem;
+}
+.saman{
+    height: 200px;
+    width: 200px;
+}
+button{
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px 30px;
+    color: #000;
+    background-color: rgb(65, 243, 11);
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    
+}
+.aclass{
+    font-size:30px;
+}
+.bclass{
+    color: rgb(3, 250, 106);
+}

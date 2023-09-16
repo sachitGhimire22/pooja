@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib import messages
-
+from .models import Item
 # Create your views here.
 from django.shortcuts import render
 
@@ -29,6 +29,16 @@ def shop(request):
     print(context)
     return render(request, "shop.html", context)
 
+
+def product_details(request,id):
+    collection_response = Collection.objects.get(id=id)
+    item_response = Item.objects.filter(category_id=id);
+    context = {
+        "collection_detail":collection_response,
+        "items":item_response
+    }
+    
+    return render(request,"sproduct.html",context)
 
 def blog(request):
     return render(request, "blog.html")
