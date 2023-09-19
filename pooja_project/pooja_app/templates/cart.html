@@ -53,35 +53,32 @@
                 </tr>
             </thead>
             <tbody>
+
+                {% for cart in cartdetails%}
                 <tr>
                     <td><a href="#"> <i class="far fa-times-circle"></i></a></td>
-                    <td><img src="/static/img/dashain-used.jpg" alt=""></td>
-                    <td>Flower</td>
-                    <td>Rs1000</td>
-                    <td><input type="text" value="1" name="" id=""></td>
-                    <td>Rs1000</td>
-                </tr>
-                <tr>
-                    <td><a href="#"> <i class="far fa-times-circle"></i></a></td>
-                    <td><img src="/static/img/dashain-used.jpg" alt=""></td>
-                    <td>Tika</td>
-                    <td>Rs500</td>
-                    <td><input type="text" value="1" name="" id=""></td>
+                    {% comment %} <td><img src=http://localhost:8000/media/{{item.item_image}} alt=""></td> {% endcomment %}
+
+                    {% comment %} <img src=http://localhost:8000/media/{{item.item_image}}/> {% endcomment %}
+                    
+                    <td>{{cart.item_id}}</td>
+                    <td>{{cart.price}}</td>
+                    <td><input type="text" value={{cart.quantity}} name="" id=""></td>
                     <td>Rs500</td>
                 </tr>
-                <tr>
-                    <td><a href="#"> <i class="far fa-times-circle"></i></a></td>
-                    <td><img src="/static/img/dashain-used.jpg" alt=""></td>
-                    <td>Jamara</td>
-                    <td>Rs500</td>
-                    <td><input type="text" value="1" name="" id=""></td>
-                    <td>Rs500</td>
-                </tr>
+                
+                
+                
+                
+                {% endfor %}
+
+               
             </tbody>
         </table>
     </section>
   
-
+  
+  
     <footer class="section-p1">
         <div class="col">
             <img src="/static/bonfire.png" height="60px" alt="" />
@@ -127,6 +124,10 @@
         </div>
     </footer>
     <script src="/static/js/script.js"></script>
+
+    <script>
+       
+    </script>
 </body>
 
 

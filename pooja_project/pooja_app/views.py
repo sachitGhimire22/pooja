@@ -41,6 +41,21 @@ def product_details(request, id):
 
     return render(request, "sproduct.html", context)
 
+def view_cart(request):
+    matchedCart = Cart.objects.filter(person_id = request.session.get('person-id'))
+    item_list = []
+    for item in matchedCart:
+        matched_item = Item.objects.filter(item_name=item.item_id).get()
+        item_list.append(matched_item)
+    #try
+    print(item_list)
+        
+    context = {
+        "cartdetails":matchedCart,
+        "itemdetails":item_list
+    }
+    return render(request,'cart.html',context)
+
 
 def blog(request):
     return render(request, "blog.html")
@@ -63,11 +78,10 @@ def add_to_cart(request,item_id,item_quantity,price):
         print("Adding failed")
     
     
-    return redirect ('view_cart')
+    return redirect ('cart')
     
     
-def view_cart(request):
-    return render(request, "cart.html")
+
 
 
 def login(request):
