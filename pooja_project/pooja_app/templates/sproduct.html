@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Festive-All</title>
     <link rel="shortcut icon" href="/bonfire.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/static/css/details.css" />
     <script
       src="https://kit.fontawesome.com/32af3d915c.js"
       crossorigin="anonymous"
@@ -38,58 +39,19 @@
     <section id="prodetails" class="section-p1">
       <div class="single-pro-image">
         <img
-          src="/static/img/bratabandha.jpg"
-          width="100%"
-          id="MainImg"
-          alt=""
-        />
+        src=http://localhost:8000/media/{{collection_detail.collection_image}}
+        width="100%" id="MainImg" alt="" />
         <div class="small-img-group">
-          <div class="small-img-col">
-            <img
-              src="/static/img/20211014080129_20210927121504_dashain-2016.jpg"
-              width="100%"
-              class="small-img"
-              alt=""
-            />
-          </div>
-          <div class="small-img-col">
-            <img
-              src="/static/img/bamboo-swing-dashain.jpg"
-              width="100%"
-              class="small-img"
-              alt=""
-            />
-          </div>
-          <div class="small-img-col">
-            <img
-              src="/static/img/download (2).png"
-              width="100%"
-              class="small-img"
-              alt=""
-            />
-          </div>
-          <div class="small-img-col">
-            <img
-              src="/static/img/download (1).png"
-              width="100%"
-              class="small-img"
-              alt=""
-            />
-          </div>
+          <div class="small-img-col"></div>
+          <div class="small-img-col"></div>
+          <div class="small-img-col"></div>
         </div>
       </div>
 
       <div class="single-pro-details">
         <h6>Product related to:</h6>
         <h4>{{collection_detail.collection_name}}</h4>
-        <h2>Rs.5000</h2>
-        <select>
-          <option>Select Size</option>
-          <option>Single Family</option>
-          <option>Joined Family</option>
-        </select>
-        <input type="number" value="1" />
-        <button class="normal">Add to Cart</button>
+
         <h4>Product Details</h4>
         <span
           >The mentioned products are all from the local vendors promoting local
@@ -97,8 +59,24 @@
         >
         <br />
         {%for item in items%}
-        <p>{{item.item_name}}</p>
-        {% endfor%}
+        <div class="pooja_main_div">
+          <div class="products_pooja">
+            <img src=http://localhost:8000/media/{{item.item_image}} alt=""
+            class="saman" />
+            <div class="saman_details">
+              <p class="aclass">{{item.item_name}}</p>
+              <p class="bclass">Rs. {{item.item_price }}</p>
+              <button class="add_to_cart_btn" id="add-to-cart-{{item.id}}">
+                Add To Cart
+              </button>
+              <button class="minus-btn" id="minus-{{item.id}}">-</button>
+              <!-- <span> {{item.item_quantity}} </span> -->
+              <span id="value-div-{{item.id}}" class="numbers-span">0</span>
+              <button class="plus-btn" id="plus-{{item.id}}">+</button>
+            </div>
+          </div>
+          {% endfor%}
+        </div>
       </div>
     </section>
 
@@ -275,6 +253,46 @@
       };
     </script>
 
+    <script>
+      {%for item in items%}
+
+          document.getElementById("plus-{{item.id}}").addEventListener("click",()=>{
+           value =   document.getElementById("value-div-{{item.id}}").innerHTML;
+           value = parseInt(value) + 1;
+           document.getElementById("value-div-{{item.id}}").innerHTML = value
+          })
+          document.getElementById("minus-{{item.id}}").addEventListener("click",()=>{
+            value =   document.getElementById("value-div-{{item.id}}").innerHTML;
+            value = parseInt(value) - 1;
+            if(           parseInt(value) - 1 <0
+            ){
+              value=0
+            }
+              document.getElementById("value-div-{{item.id}}").innerHTML = value
+
+           })
+
+
+      {%endfor%}
+    </script>
+    <script>
+
+
+      {% for item in items%}
+      document
+        .getElementById("add-to-cart-{{item.id}}")
+        .addEventListener("click", () => {
+
+            // Replace with your data
+
+          var url = "../../add_to_cart/" +{{item.id}}+"/"+ parseInt( document.getElementById("value-div-{{item.id}}").innerHTML)+"/"+{{item.item_price}}
+          window.location.href=url
+          console.log("Item Id--->"+{{item.id}});
+          console.log("Item Quantity-->"+ document.getElementById("value-div-{{item.id}}").innerHTML);
+          console.log("Kinne manche-->"+ "{{details}}")
+        });
+        {% endfor%}
+    </script>
     <script src="script.js"></script>
   </body>
 </html>

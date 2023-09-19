@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib import messages
-from .models import Item
+from .models import Item,Cart
 # Create your views here.
 from django.shortcuts import render
 
-from .models import Person,Collection
+from .models import Person, Collection
 # Create your views here.
 
 
@@ -24,27 +24,49 @@ def shop(request):
     collections = Collection.objects.all()
     context = {
         "details": request.session.get('person'),
-        "collections":collections
+        "collections": collections
     }
     print(context)
     return render(request, "shop.html", context)
 
 
-def product_details(request,id):
+def product_details(request, id):
     collection_response = Collection.objects.get(id=id)
-    item_response = Item.objects.filter(category_id=id);
+    item_response = Item.objects.filter(category_id=id)
     context = {
-        "collection_detail":collection_response,
-        "items":item_response
+        "collection_detail": collection_response,
+        "items": item_response,
+        "details": request.session.get('person-id'),
     }
-    
-    return render(request,"sproduct.html",context)
+
+    return render(request, "sproduct.html", context)
+
 
 def blog(request):
     return render(request, "blog.html")
 
 
-def cart(request):
+def add_to_cart(request,item_id,item_quantity,price):
+    print(item_id)
+    try:
+        item = Item.objects.get(pk=item_id)
+        person = Person.objects.get(pk=request.session.get("person-id"))
+        Cart.objects.create(
+            item_id=item,
+            quantity=item_quantity,  
+            price = price,
+            person_id =person  # You can adjust this as needed
+        )
+      
+    except Exception as e:
+        print(e)
+        print("Adding failed")
+    
+    
+    return redirect ('view_cart')
+    
+    
+def view_cart(request):
     return render(request, "cart.html")
 
 
@@ -57,6 +79,7 @@ def login(request):
             persons = Person.objects.get(email=email, password=password)
             messages.success(request, "Logged in successfully")
             request.session['person'] = persons.username
+            request.session['person-id'] = persons.id
             return redirect(shop)
         except Exception as e:
             print(e)

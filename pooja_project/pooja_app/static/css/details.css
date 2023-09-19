@@ -1,26 +1,27 @@
-.products_pooja{
-    display: flex;
-    gap: 2rem;
+.pooja_main_div {
+  margin: 1rem 0;
 }
-.saman{
-    height: 200px;
-    width: 200px;
+.products_pooja {
+  display: flex;
+  gap: 2rem;
 }
-button{
-    font-size: 14px;
-    font-weight: 600;
-    padding: 15px 30px;
-    color: #000;
-    background-color: rgb(65, 243, 11);
-    border-radius: 4px;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    
+.saman {
+  height: 200px;
+  width: 200px;
 }
-.aclass{
-    font-size:30px;
+.add_to_cart_btn {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 15px 30px;
+  color: #000;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  outline: none;
 }
-.bclass{
-    color: rgb(3, 250, 106);
+.aclass {
+  font-size: 30px;
+}
+.bclass {
+  color: rgb(3, 250, 106);
 }

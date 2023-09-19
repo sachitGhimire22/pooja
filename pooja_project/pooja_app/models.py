@@ -11,7 +11,8 @@ class Person(models.Model):
     password = models.CharField(max_length=40)
     email = models.EmailField(null=True)
 
-    
+    def __str__(self):
+        return self.first_name+ self.lastName
     
 
 class Collection(models.Model):
@@ -30,3 +31,10 @@ class Item (models.Model):
     
     def __str__(self):
         return self.item_name
+    
+class Cart(models.Model):
+    item_id = models.ForeignKey(Item, on_delete=models.SET_NULL,null=True)
+    person_id = models.ForeignKey("Person", on_delete=models.SET_NULL,null=True)
+    quantity = models.IntegerField()
+    price = models.IntegerField()
+    
