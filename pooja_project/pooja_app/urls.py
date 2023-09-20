@@ -13,8 +13,8 @@ urlpatterns = [
     path('cart',views.view_cart,name='cart'),
     path('login',views.login,name='login'),
     path('signup',views.signup,name='signup'),
-    path('product_details/<int:id>/',views.product_details),
-    path('add_to_cart/<int:item_id>/<int:item_quantity>/<int:price>/',views.add_to_cart),
+    path('product_details/<int:id>/',views.product_details,name="product-details"),
+    path('add_to_cart/<int:product_id>/<int:item_id>/<int:item_quantity>/<int:price>/',views.add_to_cart),
     
 ]
 

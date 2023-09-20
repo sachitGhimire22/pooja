@@ -11,6 +11,26 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="/static/css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Toastr -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"
+    ></script>
+    <script>
+      // Configure Toastr options
+
+      toastr.options = {
+        closeButton: true,
+        timeOut: 3000,
+        positionClass = "toast-top-left"
+      };
+    </script>
   </head>
 
   <body>
@@ -254,26 +274,28 @@
     </script>
 
     <script>
-      {%for item in items%}
+            {%for item in items%}
 
-          document.getElementById("plus-{{item.id}}").addEventListener("click",()=>{
-           value =   document.getElementById("value-div-{{item.id}}").innerHTML;
-           value = parseInt(value) + 1;
-           document.getElementById("value-div-{{item.id}}").innerHTML = value
-          })
-          document.getElementById("minus-{{item.id}}").addEventListener("click",()=>{
-            value =   document.getElementById("value-div-{{item.id}}").innerHTML;
-            value = parseInt(value) - 1;
-            if(           parseInt(value) - 1 <0
-            ){
-              value=0
-            }
-              document.getElementById("value-div-{{item.id}}").innerHTML = value
+                document.getElementById("plus-{{item.id}}").addEventListener("click",()=>{
+                 value =   document.getElementById("value-div-{{item.id}}").innerHTML;
+                 value = parseInt(value) + 1;
+                 document.getElementById("value-div-{{item.id}}").innerHTML = value
+                })
+                document.getElementById("minus-{{item.id}}").addEventListener("click",()=>{
+                  value =   document.getElementById("value-div-{{item.id}}").innerHTML;
+                  value = parseInt(value) - 1;
+                  if(           parseInt(value) - 1 <0
+                  ){
+                    value=0
+                  }
+                    document.getElementById("value-div-{{item.id}}").innerHTML = value
 
-           })
+                 })
 
 
-      {%endfor%}
+            {%endfor%}
+
+      pp
     </script>
     <script>
 
@@ -285,7 +307,7 @@
 
             // Replace with your data
 
-          var url = "../../add_to_cart/" +{{item.id}}+"/"+ parseInt( document.getElementById("value-div-{{item.id}}").innerHTML)+"/"+{{item.item_price}}
+          var url = "../../add_to_cart/" +{{collection_detail.id}} + "/"+ {{item.id}}+"/"+ parseInt( document.getElementById("value-div-{{item.id}}").innerHTML)+"/"+{{item.item_price}}
           window.location.href=url
           console.log("Item Id--->"+{{item.id}});
           console.log("Item Quantity-->"+ document.getElementById("value-div-{{item.id}}").innerHTML);
@@ -294,5 +316,12 @@
         {% endfor%}
     </script>
     <script src="script.js"></script>
+    <script>
+      {% if messages%}
+      {%for message in messages%}
+      toastr.{{message.tags}}("{{message}}")
+      {%endfor%}
+      {%endif%}
+    </script> 
   </body>
 </html>

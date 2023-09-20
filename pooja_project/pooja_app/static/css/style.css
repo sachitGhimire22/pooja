@@ -962,3 +962,9 @@ footer {
     padding: 5px;
   }
 }
+.toast-message{
+}
+#toast-container{
+  
+  margin-top: 3rem !important;
+}

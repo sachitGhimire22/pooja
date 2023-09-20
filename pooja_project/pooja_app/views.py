@@ -61,7 +61,7 @@ def blog(request):
     return render(request, "blog.html")
 
 
-def add_to_cart(request,item_id,item_quantity,price):
+def add_to_cart(request,product_id,item_id,item_quantity,price):
     print(item_id)
     try:
         item = Item.objects.get(pk=item_id)
@@ -72,13 +72,14 @@ def add_to_cart(request,item_id,item_quantity,price):
             price = price,
             person_id =person  # You can adjust this as needed
         )
-      
+        messages.success(request,"Added to cart")
     except Exception as e:
         print(e)
+        messages.error(request,"Couldnot add to cart")
         print("Adding failed")
     
     
-    return redirect ('cart')
+    return redirect ('../../../../../product_details/'+str(product_id))
     
     
 
